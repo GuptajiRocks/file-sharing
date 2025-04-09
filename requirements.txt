@@ -1,0 +1,6 @@
+Flask
+Flask-Dance
+Flask-Login
+Flask-SQLAlchemy
+psycopg2-binary
+python-dotenv
