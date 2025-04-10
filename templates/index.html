@@ -1,20 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Upload File</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Upload File</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gradient-to-r from-blue-100 to-purple-200 min-h-screen flex items-center justify-center">
-    <div class="bg-white p-10 rounded-lg shadow-lg">
-        <h1 class="text-2xl font-bold mb-6 text-center text-purple-700">Upload a File</h1>
-        <form action="/upload" method="post" enctype="multipart/form-data" class="space-y-4">
-            <input type="file" name="file" class="file-input file-input-bordered w-full" required>
-            <button type="submit" class="bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded-lg w-full">
-                Upload
-            </button>
-        </form>
-        <a href="/dashboard" class="block mt-4 text-center text-blue-500 underline">Go to Dashboard</a>
+<body class="bg-gradient-to-br from-blue-200 via-purple-200 to-pink-200 min-h-screen flex items-center justify-center px-4 py-8">
+
+  <div class="w-full max-w-md sm:max-w-lg md:max-w-xl bg-white/60 backdrop-blur-xl border border-white/40 rounded-3xl shadow-2xl p-8 sm:p-10">
+    <h1 class="text-2xl sm:text-3xl font-bold text-center text-purple-800 mb-6 sm:mb-8 drop-shadow">
+      📤 Upload Your File
+    </h1>
+
+    <form action="/upload" method="post" enctype="multipart/form-data" class="space-y-5">
+      <label class="block">
+        <input type="file" name="file" class="w-full text-sm text-gray-700 file:mr-4 file:py-2 file:px-4
+          file:rounded-lg file:border-0
+          file:text-sm file:font-semibold
+          file:bg-purple-500 file:text-white
+          hover:file:bg-purple-600
+          transition duration-200
+          cursor-pointer
+        " required>
+      </label>
+
+      <button type="submit" class="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white py-2 px-4 rounded-xl font-semibold shadow-md hover:shadow-xl transition duration-300">
+        Upload File
+      </button>
+    </form>
+
+    <div class="mt-6 text-center">
+      <a href="/dashboard" class="text-indigo-600 hover:underline hover:text-indigo-800 transition">📂 View Dashboard</a>
     </div>
+  </div>
+
 </body>
 </html>

@@ -39,5 +39,12 @@ def download_file(file_id):
                     mimetype='application/octet-stream',
                     headers={'Content-Disposition': f'attachment;filename={file.filename}'})
 
+@app.route("/delete_all", methods=["POST"])
+def delete_all_files():
+    # Delete all files and chunks in GridFS
+    for file in fs.find():
+        fs.delete(file._id)
+    return redirect("/dashboard")
+
 if __name__ == '__main__':
     app.run(debug=True)
