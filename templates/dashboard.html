@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-10">
+    <div class="max-w-4xl mx-auto">
+        <h1 class="text-3xl font-bold text-center text-indigo-700 mb-8">Uploaded Files</h1>
+        <div class="bg-white shadow-md rounded-lg overflow-hidden">
+            <table class="min-w-full table-auto text-sm">
+                <thead class="bg-indigo-200 text-gray-700">
+                    <tr>
+                        <th class="px-6 py-3 text-left">Filename</th>
+                        <th class="px-6 py-3 text-left">Upload Date</th>
+                        <th class="px-6 py-3">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for file in files %}
+                    <tr class="border-b hover:bg-gray-50">
+                        <td class="px-6 py-4">{{ file.filename }}</td>
+                        <td class="px-6 py-4">{{ file.uploadDate.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+                        <td class="px-6 py-4 text-center">
+                            <a href="/download/{{ file._id }}" class="bg-green-500 hover:bg-green-600 text-white px-4 py-1 rounded-lg">
+                                Download
+                            </a>
+                        </td>
+                    </tr>
+                    {% else %}
+                    <tr>
+                        <td colspan="3" class="text-center py-4 text-gray-500">No files uploaded yet.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <a href="/" class="block mt-6 text-center text-blue-500 underline">Upload More Files</a>
+    </div>
+</body>
+</html>
