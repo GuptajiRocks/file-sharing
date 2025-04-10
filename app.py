@@ -1,13 +1,18 @@
+import os
+from dotenv import load_dotenv
 from flask import Flask, render_template, request, redirect, send_file, Response
 from pymongo import MongoClient
 import gridfs
 from bson.objectid import ObjectId
 from io import BytesIO
 
+#jesus12
+load_dotenv()
+
 app = Flask(__name__)
 
-# MongoDB Atlas setup
-client = MongoClient("your_mongodb_atlas_connection_string")
+MONGO_URI = os.getenv("MONGO_URI")
+client = MongoClient(MONGO_URI)
 db = client["file_db"]
 fs = gridfs.GridFS(db)
 

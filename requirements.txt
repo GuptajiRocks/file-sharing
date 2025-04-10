@@ -1,6 +1,4 @@
-Flask
-Flask-Dance
-Flask-Login
-Flask-SQLAlchemy
-psycopg2-binary
-python-dotenv
+Flask==2.3.3
+pymongo[srv]==4.6.1
+dnspython==2.4.2
+python-dotenv==1.0.1
